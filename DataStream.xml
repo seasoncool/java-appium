@@ -2,12 +2,12 @@
 
 <datapool>  
     <email> 
-    	<host>d23ml025.cn.ibm.com</host>
-    	<username>zxyzhan@cn.ibm.com</username>
-    	<password>Simpson1!</password>    
-    	<from>No_reply@cn.ibm.com</from>
-    	<cc>150401848@qq.com</cc>
-    	<bcc>150401848@qq.com</bcc>    	
+    	<host>*****</host>
+    	<username>*****</username>
+    	<password>*****</password>    
+    	<from>*****</from>
+    	<cc>*****</cc>
+    	<bcc>*****</bcc>    	
     </email>  
 
 </datapool>  
