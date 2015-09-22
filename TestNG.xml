@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestReport">
+    <test name="TestSuits">
+<!-- 	Single cases step by step -->
+<!--         <classes>
+            <class name="cn.ibm.com.appium.Demo" />
+        </classes> -->
+        <!-- Group test -->
+        <groups>
+        	<run>
+        		<include name="functiontest" /> 
+        	</run>
+        </groups>
+    </test>
+</suite>
