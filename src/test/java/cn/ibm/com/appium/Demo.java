@@ -15,6 +15,7 @@ public class Demo {
 		
 		PublicMethod PM = new PublicMethod();
 		PM.eMailReport("150401848@qq.com", "sss", "sss", "asd");
+		System.out.println("hello GitHub");
 		
 		
 	}
