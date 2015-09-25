@@ -2,12 +2,17 @@
 
 <datapool>  
     <email> 
-    	<host>*****</host>
+    	<host>LiuDuoDuo</host>
     	<username>*****</username>
     	<password>*****</password>    
     	<from>*****</from>
     	<cc>*****</cc>
     	<bcc>*****</bcc>    	
     </email>  
+	
+	<appium>
+		<macServiceLocation>/usr/local/lib/node_modules/appium/bin/appium.js</macServiceLocation>>
+		<windowsServiceLocation></windowsServiceLocation>
+	</appium>
 
 </datapool>  

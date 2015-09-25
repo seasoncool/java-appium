@@ -1,14 +1,13 @@
 package cn.ibm.com.appium;
 
 import io.appium.java_client.AppiumDriver;
-
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -28,7 +27,6 @@ import javax.mail.internet.MimeMessage.RecipientType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -39,6 +37,7 @@ import org.xml.sax.SAXException;
 public class PublicMethod {
 	
 	public static String returnXML(String tagname, int i) {
+		
 			File f = new File("DataStream.xml");
 		    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();   
 		    DocumentBuilder builder = null;
@@ -61,16 +60,19 @@ public class PublicMethod {
 			}
 	//Reload
 	public static String returnXML(String tagname){
+		
 		return returnXML(tagname,0);
 	}
 	
 	public static String returnNowTime(){
+		
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");//time format
 		String gettiem = df.format(new Date());// new Date() to get now time
 		return gettiem;
 	}
 	
 	public static String createUniqueFolder(String foldername){		
+		
 		String curlocation = System.getProperty("user.dir");
         File dir=new File(curlocation + "/" + foldername +"_"+ returnNowTime());
         String folderpath = dir.toString();//convert type from file to string
@@ -82,6 +84,7 @@ public class PublicMethod {
 	}
 	
 	public static String createFolders(String foldername, String casename){
+		
 		String curlocation = System.getProperty("user.dir");
         File dir=new File(curlocation + "/Screenshot/" + foldername + "/" + casename);        
         String folderpath = dir.toString();//convert type from file to string
@@ -92,7 +95,8 @@ public class PublicMethod {
 		return folderpath;
 	}
 		
-	public static void takeScreenShot(AppiumDriver dr,String location,String name){		
+	public static void takeScreenShot(AppiumDriver dr,String location,String name){	
+		
         try { 
             File srcFile = ((TakesScreenshot)dr). 
                     getScreenshotAs(OutputType.FILE); 
@@ -102,7 +106,40 @@ public class PublicMethod {
             e.printStackTrace(); 
         }   
     }  
+
+	public  String osType(){
+		
+		String os = System.getProperties().getProperty("os.name");	
+		String osName =""; 
+		if (os.contains("Mac")){
+			osName = "Mac";			
+		}else if (os.contains("Windows")){
+			osName = "Windows";
+		}
+		return osName;				
+	}
 	
+	public void launchAppiumService() throws IOException{
+				
+		if (osType().equals("Mac")){
+			Runtime.getRuntime().exec("/usr/bin/open -a Terminal " + PublicMethod.returnXML("macServiceLocation") + "");
+		}else if(osType().contains("Windows")){
+			String curLocation = System.getProperty("user.dir");
+			String service = "/launchWindowsService.bat";			
+			Desktop.getDesktop().open(new File(curLocation+service));			
+		}		
+	}
+	
+	public void closeService() throws IOException{
+		
+		if (osType().equals("Mac")){
+			Runtime.getRuntime().exec("killall -9 Terminal");
+		}else if (osType().equals("Windows")){
+			//Need add
+		}
+	}
+
+
 	public void eMailReport(String recipient,String subject,String content,String attchFile) throws MessagingException, UnsupportedEncodingException{
 		
 		final Properties props = new Properties();

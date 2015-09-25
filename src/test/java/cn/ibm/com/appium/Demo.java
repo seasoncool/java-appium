@@ -1,23 +1,28 @@
 package cn.ibm.com.appium;
 
-import java.io.UnsupportedEncodingException;
+import java.io.IOException;
 
-import javax.mail.MessagingException;
+
+
+
+
+
 
 
 
 public class Demo {
-	
-	
-	
-	
-	public static void main(String[] args) throws UnsupportedEncodingException, MessagingException{
-		
+			
+
+	public static void main(String[] args) throws InterruptedException, IOException{
+				
 		PublicMethod PM = new PublicMethod();
-		PM.eMailReport("150401848@qq.com", "sss", "sss", "asd");
-		System.out.println("hello GitHub");
+		PM.launchAppiumService();
+		Thread.sleep(5000);
+		PM.closeService();
 		
 		
 	}
-
 }
+
+
+

@@ -2,29 +2,37 @@
 <testng-results skipped="1" failed="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1390" started-at="2015-09-21T13:46:13Z" finished-at="2015-09-21T13:46:15Z">
+  <suite name="Default suite" duration-ms="30569" started-at="2015-09-24T06:22:27Z" finished-at="2015-09-24T06:22:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1390" started-at="2015-09-21T13:46:13Z" finished-at="2015-09-21T13:46:15Z">
+    <test name="Default test" duration-ms="30569" started-at="2015-09-24T06:22:27Z" finished-at="2015-09-24T06:22:58Z">
       <class name="cn.ibm.testng.Template">
-        <test-method status="FAIL" signature="testBefore()[pri:0, instance:cn.ibm.testng.Template@1bca52f3]" name="testBefore" is-config="true" duration-ms="0" started-at="2015-09-21T21:46:13Z" finished-at="2015-09-21T21:46:13Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+        <test-method status="FAIL" signature="testBefore()[pri:0, instance:cn.ibm.testng.Template@7ec677d5]" name="testBefore" is-config="true" duration-ms="0" started-at="2015-09-24T14:22:27Z" finished-at="2015-09-24T14:22:27Z">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'jamesdeMacBook-Air.local', ip: '192.168.0.105', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.3', java.version: '1.7.0_71'
-Driver info: driver.version: AndroidDriver]]>
+              <![CDATA[A new session could not be created. (Original error: Could not find a connected Android device.) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 29.32 seconds
+Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
+System info: host: 'jamesdeMacBook-Air.local', ip: '9.112.131.133', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.3', java.version: '1.7.0_71'
+Driver info: io.appium.java_client.android.AndroidDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '2.45.0', revision: '5017cb8e7ca8e37638dc3091b2440b90a1d8686f', time: '2015-02-27 09:10:26'
-System info: host: 'jamesdeMacBook-Air.local', ip: '192.168.0.105', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.3', java.version: '1.7.0_71'
-Driver info: driver.version: AndroidDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:593)
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: A new session could not be created. (Original error: Could not find a connected Android device.) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 29.32 seconds
+Build info: version: '2.47.1', revision: 'unknown', time: '2015-07-30 11:02:44'
+System info: host: 'jamesdeMacBook-Air.local', ip: '9.112.131.133', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.3', java.version: '1.7.0_71'
+Driver info: io.appium.java_client.android.AndroidDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:180)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:240)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:126)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:153)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:242)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:128)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:155)
 	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
 	at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:39)
 	at cn.ibm.com.appium.AndroidInit.launchApp(AndroidInit.java:21)
@@ -51,43 +59,17 @@ Driver info: driver.version: AndroidDriver
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:4723 [/127.0.0.1] failed: Connection refused
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:140)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:314)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:126)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:72)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:133)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
-	... 30 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:579)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:72)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:117)
-	... 43 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBefore -->
-        <test-method status="SKIP" signature="launchDevice()[pri:0, instance:cn.ibm.testng.Template@1bca52f3]" name="launchDevice" duration-ms="1" started-at="2015-09-21T21:46:15Z" finished-at="2015-09-21T21:46:15Z">
+        <test-method status="SKIP" signature="launchDevice()[pri:0, instance:cn.ibm.testng.Template@7ec677d5]" name="launchDevice" duration-ms="0" started-at="2015-09-24T14:22:58Z" finished-at="2015-09-24T14:22:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchDevice -->
-        <test-method status="SKIP" signature="cleanEnv()[pri:0, instance:cn.ibm.testng.Template@1bca52f3]" name="cleanEnv" is-config="true" duration-ms="0" started-at="2015-09-21T21:46:15Z" finished-at="2015-09-21T21:46:15Z">
+        <test-method status="SKIP" signature="cleanEnv()[pri:0, instance:cn.ibm.testng.Template@7ec677d5]" name="cleanEnv" is-config="true" duration-ms="0" started-at="2015-09-24T14:22:58Z" finished-at="2015-09-24T14:22:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanEnv -->
