@@ -20,7 +20,7 @@ public class Template {
 	@BeforeTest
 	public void testBefore () throws IOException, InterruptedException{
 		dr = AndroidInit.launchApp();
-		//LocateElement.byNameClick(dr, "稍后再说");
+		
 	}
 	
 	@AfterTest
