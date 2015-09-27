@@ -1,6 +1,7 @@
 package cn.ibm.com.appium;
 
 import io.appium.java_client.AppiumDriver;
+
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -27,6 +29,7 @@ import javax.mail.internet.MimeMessage.RecipientType;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -110,16 +113,16 @@ public class PublicMethod {
 	public  String osType(){
 		
 		String os = System.getProperties().getProperty("os.name");	
-		String osName =""; 
-		if (os.contains("Mac")){
-			osName = "Mac";			
-		}else if (os.contains("Windows")){
+		String osName =""; 		
+		if (os.contains("Windows")){
 			osName = "Windows";
+		}else{
+			osName = "Mac";
 		}
 		return osName;				
 	}
 	
-	public void launchAppiumService() throws IOException{
+	public void launchAppiumService() throws IOException, InterruptedException{
 				
 		if (osType().equals("Mac")){
 			Runtime.getRuntime().exec("/usr/bin/open -a Terminal " + PublicMethod.returnXML("macServiceLocation") + "");
@@ -127,16 +130,18 @@ public class PublicMethod {
 			String curLocation = System.getProperty("user.dir");
 			String service = "/launchWindowsService.bat";			
 			Desktop.getDesktop().open(new File(curLocation+service));			
-		}		
+		}
+		Thread.sleep(5000);
 	}
 	
-	public void closeService() throws IOException{
+	public void closeService() throws IOException, InterruptedException{
 		
 		if (osType().equals("Mac")){
 			Runtime.getRuntime().exec("killall -9 Terminal");
 		}else if (osType().equals("Windows")){
-			//Need add
+			Runtime.getRuntime().exec("taskkill /f /im node.exe");
 		}
+		Thread.sleep(2000);
 	}
 
 
